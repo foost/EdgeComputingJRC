@@ -1,0 +1,3 @@
+# EdgeComputingJRC
+
+This repository contains all code to deploy the proof of concept developed under contract by the JRC. More info to follow soon... 
