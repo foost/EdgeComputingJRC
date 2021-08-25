@@ -1,0 +1,22 @@
+Labels:
+
+_silence_
+_unknown_
+airplane
+car_horn
+helicopter
+siren
+train
+
+BACKGROUND_FREQ = 0.8
+BACKGROUND_VOLUME = 0.1
+
+Confusion Matrix:
+ [[11  0  1  0  1  0  0]
+ [ 0  2  0  1  2  3  5]
+ [ 1  2 11  1  2  0  5]
+ [ 0  1  0  3  0  1  0]
+ [ 0  1  3  0 17  1  2]
+ [ 0  0  1  1  1 21  0]
+ [ 0  2  1  3  4  0  7]]
+WARNING:tensorflow:Final test accuracy = 61.0% (N=118)

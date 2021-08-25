@@ -1,0 +1,16 @@
+Labels
+
+_silence_
+_unknown_
+car_horn
+siren
+
+BACKGROUND_FREQ = 0.8
+BACKGROUND_VOLUME = 0.1
+
+Confusion Matrix:
+ [[ 8  0  0  0]
+ [ 0  6  2  0]
+ [ 0  0  3  2]
+ [ 0  1  1 22]]
+WARNING:tensorflow:Final test accuracy = 86.7% (N=45)
