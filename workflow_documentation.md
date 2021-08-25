@@ -53,6 +53,9 @@ Open the mqtt_esc50_subscribe.py and run it to subscribe to the detected and pub
 
 
 # References
+
 [1] https://www.oreilly.com/library/view/tinyml/9781492052036/ 
+ 
 [2] https://github.com/tensorflow/tflite-micro
+
 [3] https://github.com/karolpiczak/ESC-50
