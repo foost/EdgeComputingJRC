@@ -1,11 +1,11 @@
 # EdgeComputingJRC
 
-This repository contains all code to deploy the proof of concept developed under contract by the JRC. 
+This repository contains all code to deploy the proof of concept developed under contract by the European Commission's Joint Research Center [1]. 
 
 
 # License and funding
 
-The work on this proof-of-concept has been commissioned and funded by the European Commission Joint Research Center. However, the type of application, choice of hardware and software, and most importantly mistakes and shortcomings are all my own. More information on the experiment will be forthcomign in a JRC Technical report chapter, to be published at the end of 2021. 
+Although the work on this proof-of-concept has been commissioned and funded by the JRC, the choice of application, hardware, and software, as well as all mistakes and shortcomings are my own, and do not constitute any endorsement by the JRC. More information on the experiment will be forthcoming in a JRC Technical report chapter, to be published at the end of 2021. 
 
 The license is EU Public License 1.2, which is a very permissive license. 
 
@@ -14,26 +14,45 @@ The code in this repository is a proof-of-concept, nothing more. The performance
 
 # Files
 
-workflow_documentation.txt
+_workflow_documentation.md_
+
 an overview of the workflow used in the experiment, including when to use which script. 
 
-requirements_{conda,pip}.txt
+
+_requirements_{conda,pip}.txt_
+
 the libraries used in the Python virtual environment
 
-prepare_esc50.ipynb
+
+_prepare_esc50.ipynb_
+
 the script to prepare the input data
 
-train_micro_speech_model_esc50.ipynb
+
+_train_micro_speech_model_esc50.ipynb_
+
 the script where the magic happens. Based on examples for the TinyML book and modified for ESC50 data. 
 
-ble_mqtt_bridge.py
+
+_ble_mqtt_bridge.py_
+
 script to connect with BLE Arduino project (see below), to receive detected noise events via BLE, and to publish them via MQTT
 
-mqtt_ecs50_subscribe.ipynb
+
+_mqtt_ecs50_subscribe.py_
+
 short script to connect to MQTT service
 
-Arduino_Nano_{BLE_}ESC50_helicopter_siren
-ready-to-deploy Arduino Nano code, one using BLE to transmit detected noise events. 
 
-models
-Directory containing pre-trained models from the experiments, with meta-data. Can be plugged into the Arduino code, but make sure to adapt all dependent parameters. 
+_Arduino_Nano_{BLE_}ESC50_helicopter_siren_ 
+
+folders with ready-to-deploy Arduino Nano code, one using BLE to transmit detected noise events. 
+
+
+_models_
+
+folders containing pre-trained models from the experiments, with meta-data. Can be plugged into the Arduino code, but make sure to adapt all dependent parameters. 
+
+
+# References
+[1] https://ec.europa.eu/info/departments/joint-research-centre_en

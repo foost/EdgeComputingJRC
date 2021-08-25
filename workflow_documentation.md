@@ -9,26 +9,26 @@ The workflow to train and use a neural network for audio recognition on an Ardui
 4. Start BLE-MQTT bridge
 5. Start MQTT subscription
 
-Each step is briefly described below. More documentation can be found in the notebooks/code, and of course in the TinyML book and Github repository [0]. 
+Each step is briefly described below. More documentation can be found in the notebooks/code, and of course in the TinyML book [1] and Github repository [2]. 
 
 
 # Hardware and software requirements
 
-This repository used an Arduino Nano BLE Sense for listening to ambient sound and detecting specific noise events. A Raspberry Pi 4B was used as the BLE receiver and MQTT publisher. The model training takes around 90 minutes on a 2020 standard quad-core Intel/Win10 laptop. 
+This repository used an Arduino Nano BLE Sense for listening to ambient sound and detecting specific noise events. A Raspberry Pi 4B was used as the BLE receiver and MQTT publisher. The model training takes around 90 minutes on a fairly standard quad-core Intel/Win10 laptop. 
 
 The software environment was a Miniconda environment with Python 3.7.11 and Tensorflow 1.15. For details, see the requirements files. 
 
  
 # Prepare training data
 
-The example uses the ESC50 audio data found at [1], but any other data can in principle be used. However, without adapting other parameters, longer audio samples quickly increase the time to train a model and the size of the trained model, and reduce frequency of inference on the Arduino Nano. 
+The example uses the ESC50 audio data found at [3], but any other data can in principle be used. However, without adapting other parameters, longer audio samples quickly increase the time to train a model and the size of the trained model, and reduce frequency of inference on the Arduino Nano. 
 
 Download and extract the ESC50 data in your working directory, then open the prepare_ESC50.ipynb. Check whether the paths and other parameters are okay for you and run it. Processing takes a couple of minutes at most. 
 
 
 # Train model
 
-Open the train_micro_speech_model_esc50.ipynb. It is based on the TinyML examples (see in-notebook links), with modifications to use ESC50 training data. Make sure that all parameters match your intentions (and input data), then run cell-by-cell. The main model building takes around 90 minutes on an average laptop. To check progress, you can open the train directory and see at which learning step it is (or you get Tensorflow Dashboard to work, which I couldn't). 
+Open the train_micro_speech_model_esc50.ipynb. It is based on the TinyML examples from [2], with modifications to use ESC50 training data. Make sure that all parameters match your intentions (and input data), then run cell-by-cell. The main model building takes around 90 minutes on an average laptop. To check progress, you can open the train directory and see at which learning step it is (or you get Tensorflow Dashboard to work, which I couldn't). 
 
 The output model is a text file, which I suggest to save with a descriptive name and the most important metadata in a separate directory for later reference and reuse. 
 
@@ -49,7 +49,10 @@ This step only applies when using the BLE version of the code: Start the other B
 
 # Start MQTT subscription
 
-Open the mqtt_esc50_subscribre.ipynb and run it to subscribe to the detected and published noise events. In case the demonstration server does not work, you can choose another freely available (quick internet search helps). 
+Open the mqtt_esc50_subscribe.py and run it to subscribe to the detected and published noise events. In case the demonstration server does not work, you can choose another freely available (quick internet search helps). 
 
-[0] https://github.com/tensorflow/tflite-micro
-[1] https://github.com/karolpiczak/ESC-50
+
+# References
+[1] https://www.oreilly.com/library/view/tinyml/9781492052036/ 
+[2] https://github.com/tensorflow/tflite-micro
+[3] https://github.com/karolpiczak/ESC-50
