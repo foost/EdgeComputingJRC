@@ -28,7 +28,10 @@ client_id = f'python-mqtt-{random.randint(0, 1000)}'
 username = 'emqx'
 password = 'public'
 
-root_path = os.environ["HOME"]
+# Linux OS
+# root_path = os.environ["HOME"]
+# Windows OS
+root_path = os.path.expanduser('~')
 output_file = f"{root_path}/Desktop/microphone_dump.csv"
 
 #selected_device = [00001c80-0000-1000-8000-00805f9b34fb]
@@ -209,7 +212,7 @@ if __name__ == "__main__":
     data_to_file = DataToFile(output_file)
 
     connection = Connection(
-        loop, read_characteristic
+        loop, read_characteristic, write_characteristic, data_to_file.write_to_csv
     )
 #     connection = Connection(
 #         loop, read_characteristic, write_characteristic, data_to_file.write_to_csv

@@ -14,7 +14,7 @@ The code in this repository is a proof-of-concept, nothing more. The performance
 
 # Files
 
-_workflow_documentation.md_
+_0_workflow_documentation.md_
 
 an overview of the workflow used in the experiment, including when to use which script. 
 
@@ -24,22 +24,22 @@ _requirements_{conda,pip}.txt_
 the libraries used in the Python virtual environment
 
 
-_prepare_esc50.ipynb_
+_1_prepare_esc50.py_
 
 the script to prepare the input data
 
 
-_train_micro_speech_model_esc50.ipynb_
+_2_train_noise_listener_model_esc50.ipynb_
 
 the script where the magic happens. Based on examples for the TinyML book and modified for ESC50 data. 
 
 
-_ble_mqtt_bridge.py_
+_3_ble_mqtt_bridge.py_
 
 script to connect with BLE Arduino project (see below), to receive detected noise events via BLE, and to publish them via MQTT
 
 
-_mqtt_ecs50_subscribe.py_
+_4_mqtt_ecs50_subscribe.py_
 
 short script to connect to MQTT service
 
