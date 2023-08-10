@@ -1,6 +1,6 @@
 # EdgeComputingJRC
 
-This repository contains all code to deploy the proof of concept developed under contract by the European Commission's Joint Research Center [1]. 
+This repository contains all code to deploy the proof of concept developed under contract by the European Commission's Joint Research Center [1]. [UPDATE] The result have been published in a chapter of a technical report [2]. 
 
 
 # License and funding
@@ -56,3 +56,4 @@ folders containing pre-trained models from the experiments, with meta-data. Can 
 
 # References
 [1] https://ec.europa.eu/info/departments/joint-research-centre_en
+[2] https://data.europa.eu/doi/10.2760/511775
